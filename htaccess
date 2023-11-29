@@ -1,0 +1,29 @@
+ErrorDocument 403 /page33549543.html
+ErrorDocument 404 /page33549543.html
+
+DirectoryIndex page33368576.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://fctaur\.md/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.fctaur.md [NC]
+RewriteRule ^(.*)$ https://fctaur\.md/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^home$ page33368576.html [NC]
+RewriteRule ^home/$ page33368576.html [NC]
+
+RewriteRule ^error404$ page33549543.html [NC]
+RewriteRule ^error404/$ page33549543.html [NC]
+
+RewriteRule ^pk$ page33996354.html [NC]
+RewriteRule ^pk/$ page33996354.html [NC]
+
+RewriteRule ^members/ ma_start.html [NC]
+
+
